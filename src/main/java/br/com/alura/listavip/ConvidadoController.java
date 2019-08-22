@@ -14,12 +14,12 @@ public class ConvidadoController {
 	@Autowired
 	private ConvidadoRepository repository;
 	
-	@RequestMapping("/")
+	@RequestMapping(path = "/")
 	public String index() {
 		return "index";
 	}
 	
-	@RequestMapping("listaconvidados")
+	@RequestMapping(path = "/listaconvidados")
 	public String listaConvidados(Model model) {
 		Iterable<Convidado> convidados = repository.findAll();
 		model.addAttribute("convidados", convidados);
